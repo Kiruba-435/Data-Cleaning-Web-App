@@ -4,6 +4,7 @@ import pandas as pd
 from modules.cleaning import clean_data
 from modules.report import generate_report
 from io import BytesIO
+import openpyxl
 
 st.set_page_config("🧼 Smart Data Cleaning", layout="centered")
 
@@ -50,7 +51,7 @@ elif nav == "Data Cleaning":
         if file_type == "csv":
             df = pd.read_csv(uploaded_file)
         elif file_type == "xlsx":
-            df = pd.read_excel(uploaded_file)
+            df = pd.read_excel(uploaded_file, engine='openpyxl')
         else:
             st.error("❌ Unsupported file format.")
             st.stop()
