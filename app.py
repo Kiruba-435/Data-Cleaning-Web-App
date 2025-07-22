@@ -4,7 +4,7 @@ import pandas as pd
 from modules.cleaning import clean_data
 from modules.report import generate_report
 from io import BytesIO
-import openpyxl
+
 
 st.set_page_config("🧼 Smart Data Cleaning", layout="centered")
 
