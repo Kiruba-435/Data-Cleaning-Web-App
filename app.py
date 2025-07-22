@@ -22,7 +22,7 @@ if nav == "Home":
     st.markdown("<span style='color: #ff4b4b; font-weight: bold;'>User feedback is crucial for us. It helps us improve and deliver the best experience!</span>", unsafe_allow_html=True)
 
     # Visible, relevant image
-    st.image("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", use_column_width=True)
+    st.image("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", use_container_width=True)
 
     st.markdown("---")
     st.subheader("✨ Why Use This App?")
