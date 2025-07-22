@@ -21,6 +21,13 @@ def clean_data(df, drop_columns=None, do_cleaning=True, do_outliers=True, do_enc
         cat_cols = df.select_dtypes(include='object').columns
         duplicates_removed = 0
 
+    if do_outliers:
+        before_rows = df.shape[0]
+        df = remove_outliers_iqr(df, multiplier=iqr_multiplier)
+        outliers_removed = before_rows - df.shape[0]
+    else:
+        outliers_removed = 0
+
     if do_encoding:
         le = LabelEncoder()
         for col in cat_cols:
@@ -29,11 +36,6 @@ def clean_data(df, drop_columns=None, do_cleaning=True, do_outliers=True, do_enc
     else:
         encoded_count = 0
 
-    if do_outliers:
-        before_rows = df.shape[0]
-        df = remove_outliers_iqr(df, multiplier=iqr_multiplier)
-        outliers_removed = before_rows - df.shape[0]
-    else:
-        outliers_removed = 0
+    
 
     return df, encoded_count, duplicates_removed, outliers_removed
