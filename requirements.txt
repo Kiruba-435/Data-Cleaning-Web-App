@@ -4,3 +4,6 @@ openpyxl
 pandas
 streamlit
 scikit-learn
+xlsxwriter
+bytesio
+# --- IGNORE ---
