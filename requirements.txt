@@ -1,4 +1,6 @@
-streamlit
+# requirements.txt
+# This file lists the dependencies for the Data Cleaning App.
+openpyxl
 pandas
+streamlit
 scikit-learn
-xlsxwriter
